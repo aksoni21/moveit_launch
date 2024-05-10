@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fr5_robot">
+
+    <!-- Constants  -->
+    <xacro:property name="PI" value="3.14159265359"/>
+
+    <xacro:include filename="$(find sa_pkg)/urdf/fr5_robot_description.xacro"/>
+    <xacro:include filename="$(find sa_pkg)/urdf/fr5_robot_ros2_control.xacro"/>
+    
+</robot>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fr5_robot">
+    
+    <ros2_control name = "FR5_Sim" type="System">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <joint name="Joint1">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Joint2">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Joint3">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Joint4">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Joint5">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Joint6">
+            <command_interface name = "position">
+                <param name = "min">-${PI}</param>
+                <param name = "max">${PI}</param>
+            </command_interface>
+            <state_interface name = "position"/>
+            <state_interface name = "velocity"/>
+        </joint>
+
+        <joint name = "Slider_driver">
+            <command_interface name = "position">
+                <param name = "min">-0.02</param>
+                <param name = "max">0.02</param>
+            </command_interface>
+            <state_interface name = "position"/>
+        </joint>
+
+        <joint name = "Slider_driven">
+            <param name="mimic">Slider_driver</param>
+            <param name="multiplier">-1</param>
+            <command_interface name = "position">
+                <param name = "min">-0.02</param>
+                <param name = "max">0.02</param>
+            </command_interface>
+        </joint>
+    </ros2_control>
+
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <robot_param>robot_description</robot_param>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            <!-- <parameters>$(find my_pkg)/config/controllers.yaml</parameters> -->
+        </plugin>
+    </gazebo>
+</robot>

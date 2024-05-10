@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="white">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+
+      <!-- Contants -->
+      <xacro:property name="PI" value="3.14159265359"/>
+      
+    <link name = "world"/>
+
+    <!--  Joint between the world and base_link - prevents robot from falling-->
+    <joint name="virtual_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="world"/>
+        <child link="base_link"/>
+    </joint>
+
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.00344430106272263 -0.07860899003720247 0.043085717488718915" rpy="0 0 0"/>
+            <mass value="4.705646903566534"/>
+            <inertia ixx="0.008986" iyy="0.008941" izz="0.013145" ixy="3.8e-05" iyz="-2.3e-05" ixz="-5.8e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Base2">
+        <inertial>
+            <origin xyz="-0.0008562662419486543 -0.0037392284022613465 0.07218692821064043" rpy="0 0 0"/>
+            <mass value="12.703398553828709"/>
+            <inertia ixx="0.032296" iyy="0.03147" izz="0.023715" ixy="-0.000226" iyz="0.00027" ixz="5.7e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.0039 0.078296 -0.075621" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Base2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0039 0.078296 -0.075621" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Base2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Base2">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Link1">
+        <inertial>
+            <origin xyz="-0.0180731930163383 -0.07157463609878126 0.21277250495980113" rpy="0 0 0"/>
+            <mass value="42.03673114804175"/>
+            <inertia ixx="1.32438" iyy="1.30868" izz="0.082566" ixy="-0.004323" iyz="-0.003933" ixz="-0.002783"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.011093 0.137129 -0.153844" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.011093 0.137129 -0.153844" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="Link1">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+    <link name="Link2">
+        <inertial>
+            <origin xyz="-0.16843673107287727 0.09935026115949067 5.9367849019831276e-05" rpy="0 0 0"/>
+            <mass value="22.30207037010936"/>
+            <inertia ixx="0.063956" iyy="0.454292" izz="0.496917" ixy="0.131054" iyz="-0.000158" ixz="0.000553"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.010137 0.135762 -0.578841" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.010137 0.135762 -0.578841" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="Link2">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+    <link name="Link3">
+        <inertial>
+            <origin xyz="-0.011101869591843672 -0.042430035740096884 -0.0032811471837386197" rpy="0 0 0"/>
+            <mass value="4.720500726824531"/>
+            <inertia ixx="0.00645" iyy="0.006014" izz="0.004483" ixy="-0.00012" iyz="-9.2e-05" ixz="-2.6e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.392041 0.03482 -0.579376" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.392041 0.03482 -0.579376" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Link3">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Link4">
+        <inertial>
+            <origin xyz="-0.00392206453430638 0.0008508109977091727 -0.04124459888304666" rpy="0 0 0"/>
+            <mass value="4.588715804955936"/>
+            <inertia ixx="0.004321" iyy="0.00607" izz="0.00589" ixy="0.000481" iyz="1.5e-05" ixz="-6.4e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.404497 0.082224 -0.521757" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.404497 0.082224 -0.521757" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Link4">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Link5">
+        <inertial>
+            <origin xyz="-0.01854043192068222 0.00468045115966674 4.470898721870009e-05" rpy="0 0 0"/>
+            <mass value="1.5275986719750236"/>
+            <inertia ixx="0.001184" iyy="0.000831" izz="0.000809" ixy="-9.8e-05" iyz="0.0" ixz="-1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.46097 0.067896 -0.476837" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.46097 0.067896 -0.476837" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Link5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Link5">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Gripper_Base">
+        <inertial>
+            <origin xyz="-0.041639156063759564 0.010756927704983654 6.14949019796529e-05" rpy="0 0 0"/>
+            <mass value="2.6889062067064198"/>
+            <inertia ixx="0.001767" iyy="0.002575" izz="0.002857" ixy="0.000217" iyz="-7e-06" ixz="-0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.501651 0.057451 -0.476895" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper_Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.501651 0.057451 -0.476895" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper_Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="Gripper_Base">
+        <material>Gazebo/Grey</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Gripper1">
+        <inertial>
+            <origin xyz="-0.01869703186265992 0.016387001617356352 0.00624617966194746" rpy="0 0 0"/>
+            <mass value="0.11665826251243909"/>
+            <inertia ixx="1.6e-05" iyy="4.2e-05" izz="4.6e-05" ixy="-7e-06" iyz="2e-06" ixz="1e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.589516 0.070265 -0.463163" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.589516 0.070265 -0.463163" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Gripper1">
+        <material>Gazebo/Red</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <link name="Gripper2">
+        <inertial>
+            <origin xyz="-0.024295167975335485 -0.005349152028662122 -0.006184264364863468" rpy="0 0 0"/>
+            <mass value="0.11665836475124194"/>
+            <inertia ixx="2.8e-05" iyy="3e-05" izz="4.6e-05" ixy="1.5e-05" iyz="7e-06" ixz="-8e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.572439 0.003904 -0.490853" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0.572439 0.003904 -0.490853" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://sa_pkg/meshes/Gripper2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="Gripper2">
+        <material>Gazebo/Red</material>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <mu1>0.7</mu1>
+        <mu2>0.7</mu2>
+    </gazebo>
+
+    <joint name="Joint1" type="revolute">
+        <origin xyz="0.0039 -0.078296 0.075621" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="Base2"/>
+        <axis xyz="0.002251 0.003216 0.999992"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Joint2" type="revolute">
+        <origin xyz="-0.014993 -0.058833 0.078223" rpy="0 0 0"/>
+        <parent link="Base2"/>
+        <child link="Link1"/>
+        <axis xyz="-0.248671 -0.968581 0.003674"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Joint3" type="revolute">
+        <origin xyz="0.000956 0.001367 0.424997" rpy="0 0 0"/>
+        <parent link="Link1"/>
+        <child link="Link2"/>
+        <axis xyz="0.248671 0.968581 -0.003674"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Joint4" type="revolute">
+        <origin xyz="-0.381904 0.100942 0.000535" rpy="0 0 0"/>
+        <parent link="Link2"/>
+        <child link="Link3"/>
+        <axis xyz="-0.248671 -0.968581 0.003674"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Joint5" type="revolute">
+        <origin xyz="-0.012456 -0.047404 -0.057619" rpy="0 0 0"/>
+        <parent link="Link3"/>
+        <child link="Link4"/>
+        <axis xyz="-0.002251 -0.003216 -0.999992"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Joint6" type="revolute">
+        <origin xyz="-0.056473 0.014328 -0.04492" rpy="0 0 0"/>
+        <parent link="Link4"/>
+        <child link="Link5"/>
+        <axis xyz="-0.968585 0.248677 0.00138"/>
+        <limit upper="${PI}" lower="${-PI}" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Rigid1" type="fixed">
+        <origin xyz="-0.040681 0.010445 5.8e-05" rpy="0 0 0"/>
+        <parent link="Link5"/>
+        <child link="Gripper_Base"/>
+    </joint>
+
+    <joint name="Slider_driver" type="prismatic">
+        <origin xyz="-0.087865 -0.012814 -0.013732" rpy="0 0 0"/>
+        <parent link="Gripper_Base"/>
+        <child link="Gripper1"/>
+        <axis xyz="0.248603 0.968124 0.030527"/>
+        <limit upper="0.02" lower="-0.02" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="Slider_driven" type="prismatic">
+        <origin xyz="-0.070788 0.053547 0.013958" rpy="0 0 0"/>
+        <parent link="Gripper_Base"/>
+        <child link="Gripper2"/>
+        <axis xyz="0.248603 0.968124 0.030527"/>
+        <limit upper="0.02" lower="-0.02" effort="100" velocity="100"/>
+        <mimic joint = "Slider_driver" multiplier = "-1"/>
+    </joint>
+
+
+</robot>
