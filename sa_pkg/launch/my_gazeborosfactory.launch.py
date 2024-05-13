@@ -75,14 +75,7 @@ def generate_launch_description():
         #     output='screen',
         #     parameters=[robot_description],
         # ),
-        # Node(
-        #     package='rviz2',
-        #     executable='rviz2',
-        #     name='rviz2',
-        #     output='screen',
-        #     arguments=['-d',"/home/aksoni/Documents/projects/ros2/rviz_all.rviz"]
-        # ),
-        start_gazebo_server_cmd,
+        # Node(ver_cmd,
         start_gazebo_client_cmd,
         joint_trajectory_arm_controller,
         joint_trajectory_gripper_controller,
