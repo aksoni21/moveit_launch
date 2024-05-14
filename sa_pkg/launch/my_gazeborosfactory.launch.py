@@ -77,6 +77,7 @@ def generate_launch_description():
         # ),
         # Node(ver_cmd,
         start_gazebo_client_cmd,
+        start_gazebo_server_cmd,
         joint_trajectory_arm_controller,
         joint_trajectory_gripper_controller,
         joint_state_broadcaster

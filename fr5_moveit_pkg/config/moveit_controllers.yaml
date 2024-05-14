@@ -4,10 +4,10 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 
 moveit_simple_controller_manager:
   controller_names:
-    - fr5_arm_group_controller
-    - fr5_gripper_group_controller
+    - fr5_arm_controller
+    - fr5_gripper_controller
 
-  fr5_arm_group_controller:
+  fr5_arm_controller:
     type: FollowJointTrajectory
     action_ns: follow_joint_trajectory
     default: true
@@ -18,7 +18,7 @@ moveit_simple_controller_manager:
       - Joint4
       - Joint5
       - Joint6
-  fr5_gripper_group_controller:
+  fr5_gripper_controller:
     type: FollowJointTrajectory
     action_ns: follow_joint_trajectory
     default: true

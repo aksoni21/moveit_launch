@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 10
+    update_rate: 50
     
     # Joint Trajectory Controller
     fr5_arm_controller:
